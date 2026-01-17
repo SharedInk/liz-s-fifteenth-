@@ -238,4 +238,35 @@ document.addEventListener("DOMContentLoaded", () => {
       const n = (fromName?.value || "").trim();
       if (!n) return;
       localStorage.setItem("liz_card_from", n);
-      if (car
+      if (cardFromLine) cardFromLine.textContent = `From: ${n}`;
+      if (cardSig) cardSig.textContent = `— ${n}`;
+      sparkle(window.innerWidth * 0.5, window.innerHeight * 0.25);
+    });
+  }
+
+  // -----------------
+  // About: reveal notes
+  // -----------------
+  const revealOutput = document.getElementById("revealOutput");
+  document.querySelectorAll(".chip").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (revealOutput) revealOutput.textContent = btn.dataset.reveal || "";
+      sparkle(window.innerWidth * 0.5, window.innerHeight * 0.25);
+    });
+  });
+
+  // -----------------
+  // Mood slider
+  // -----------------
+  const mood = document.getElementById("mood");
+  if (mood) {
+    mood.addEventListener("input", () => {
+      const v = Number(mood.value); // 0..100
+      const p = 18 + v * 0.6; // ~18..78
+      document.body.style.background = `linear-gradient(90deg,
+        rgba(246,211,222,${p / 200}) 0 50%,
+        rgba(214,232,255,${p / 200}) 50% 100%)`;
+    });
+    mood.dispatchEvent(new Event("input"));
+  }
+});
