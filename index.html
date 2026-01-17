@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, Liz</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Confetti layer -->
+  <canvas id="confetti"></canvas>
+
+  <!-- ENTRY SCREEN -->
+  <section class="entry" id="entry">
+    <div class="entry-card">
+      <div class="entry-top">
+        <div class="dot pink"></div>
+        <div class="dot blue"></div>
+        <div class="dot neutral"></div>
+      </div>
+
+      <h1>A small birthday site</h1>
+      <p class="subtle">
+        Type your name to enter.
+      </p>
+
+      <div class="entry-row">
+        <label class="label" for="nameField">Name</label>
+        <input id="nameField" class="input" placeholder="e.g., Liz" autocomplete="off" />
+      </div>
+
+      <button id="enterBtn" class="btn primary">Enter</button>
+
+      <p class="tiny">
+        (If you’re not Liz, you can still enter — but be nice.)
+      </p>
+    </div>
+  </section>
+
+  <!-- SITE -->
+  <div class="site hidden" id="site">
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark"></div>
+        <div>
+          <div class="title" id="siteTitle">Happy Birthday</div>
+          <div class="subtitle" id="siteSubtitle">A small page made just for you</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="tab active" data-page="home">Home</button>
+        <button class="tab" data-page="card">Card</button>
+        <button class="tab" data-page="about">About</button>
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <!-- HOME -->
+      <section class="page show" id="home">
+        <div class="grid">
+          <div class="panel panel-pink">
+            <h2 id="homeHeading">Happy 15th, Liz</h2>
+            <p class="lead" id="homeLead">
+              I made you a little website. It’s calm, pretty, and has a few surprises.
+            </p>
+
+            <div class="divider"></div>
+
+            <div class="actions">
+              <button class="btn secondary" id="miniConfetti">Celebrate</button>
+              <button class="btn ghost" id="replayIntro">Replay intro confetti</button>
+            </div>
+
+            <div class="micro">
+              Click anywhere for a subtle sparkle.
+            </div>
+          </div>
+
+          <div class="panel panel-blue">
+            <div class="photo-frame">
+              <!-- Put your friend’s photo in the repo named liz.jpg (or change src) -->
+              <img id="lizPhoto" src="liz.jpg" alt="Photo" />
+            </div>
+
+            <div class="caption">
+              <div class="caption-title" id="captionTitle">Liz</div>
+              <div class="caption-sub" id="captionSub">15 today</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CARD -->
+      <section class="page" id="card">
+        <div class="panel panel-blue single">
+          <h2>Card</h2>
+          <p class="subtle">Paste your message below, then press “Update card”.</p>
+
+          <label class="label" for="cardInput">Your message</label>
+          <textarea id="cardInput" class="textarea" rows="10" placeholder="Paste your birthday card text here..."></textarea>
+
+          <div class="actions">
+            <button class="btn primary" id="saveCard">Update card</button>
+            <button class="btn ghost" id="clearCard">Clear</button>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="card-preview" id="cardPreview">
+            <div class="card-top">
+              <div class="stamp"></div>
+              <div>
+                <div class="card-to" id="cardToLine">To: Liz</div>
+                <div class="card-from" id="cardFromLine">From: (your name)</div>
+              </div>
+            </div>
+
+            <div class="card-body" id="cardBody">
+              Your card will show up here once you update it.
+            </div>
+
+            <div class="card-bottom">
+              <span class="signature" id="cardSig">— (your name)</span>
+            </div>
+          </div>
+
+          <div class="name-set">
+            <label class="label" for="fromName">Your name (optional)</label>
+            <div class="name-row">
+              <input id="fromName" class="input" placeholder="e.g., Ava" />
+              <button class="btn secondary" id="setFromName">Set</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="page" id="about">
+        <div class="grid">
+          <div class="panel panel-blue">
+            <h2>About</h2>
+            <p class="lead">
+              This section can be whatever you want: a timeline, inside jokes, a mini “reasons I appreciate you” list.
+            </p>
+
+            <div class="divider"></div>
+
+            <div class="reveal-box">
+              <div class="reveal-title">Tap to reveal</div>
+              <div class="reveal-buttons">
+                <button class="chip" data-reveal="You make people feel comfortable just by being there.">Note 1</button>
+                <button class="chip" data-reveal="I’m genuinely lucky I get to be your friend.">Note 2</button>
+                <button class="chip" data-reveal="This year is going to look good on you.">Note 3</button>
+              </div>
+              <div class="reveal-output" id="revealOutput">
+                Choose a note.
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-pink">
+            <h2>Little interaction</h2>
+            <p class="subtle">
+              A tiny “mood” slider that changes the background softness.
+            </p>
+
+            <label class="label" for="mood">Softness</label>
+            <input id="mood" type="range" min="0" max="100" value="40" />
+
+            <div class="mood-readout">
+              <span>Less</span>
+              <span>More</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <p class="tiny">
+              (You can replace this with something more personal later.)
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span id="footerLine">Made privately, on purpose.</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
