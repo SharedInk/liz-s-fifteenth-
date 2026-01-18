@@ -3,108 +3,241 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday, Liz</title>
+  <title>Happy Birthday</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
 
-  <!-- Entry Screen -->
+<body>
+  <!-- ENTRY SCREEN -->
   <section id="entry" class="entry">
     <div class="entry-box">
-      <h1>Happy Birthday, Liz!</h1>
+      <h1>Happy Birthday</h1>
       <p>Please enter your name</p>
-      <input type="text" id="nameInput" placeholder="Liz" />
-      <button id="enterBtn">Enter</button>
+
+      <input id="nameInput" type="text" placeholder="Liz" autocomplete="off" />
+      <button id="enterBtn" type="button">Enter</button>
+
+      <p class="tiny">Press Enter on your keyboard too.</p>
     </div>
   </section>
 
-  <!-- Home Page -->
-  <section id="home" class="hidden page">
-    <header>
-      <nav>
-        <button class="tab" data-page="home">Home</button>
-        <button class="tab" data-page="card">Card</button>
-        <button class="tab" data-page="about">About</button>
+  <!-- MAIN SITE -->
+  <div id="site" class="site hidden">
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark"></div>
+        <div>
+          <div class="title" id="titleText">Happy Birthday</div>
+          <div class="subtitle">A little website made just for today</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="tab active" type="button" data-page="home">Home</button>
+        <button class="tab" type="button" data-page="card">Card</button>
+        <button class="tab" type="button" data-page="about">About</button>
       </nav>
     </header>
 
-    <main>
-      <section id="homePage" class="page show">
-        <h2>Happy 15th, Liz!</h2>
-        <div class="photo">
-          <!-- Placeholder for Liz's photo -->
+    <main class="wrap">
+      <!-- HOME -->
+      <section id="home" class="page show">
+        <div class="grid">
+          <div class="panel panel-pink">
+            <h2 id="homeHeading">Happy 15th</h2>
+            <p class="lead">Click anywhere for little hearts.</p>
+          </div>
+
+          <div class="panel panel-blue">
+            <div class="photo-frame">
+              <!-- Add Liz’s photo later by uploading an image named liz.jpg -->
+              <img id="lizPhoto" src="liz.jpg" alt="Liz" />
+            </div>
+            <div class="caption">
+              <span class="caption-title" id="captionName">Liz</span>
+              <span class="caption-sub">15 today</span>
+            </div>
+          </div>
         </div>
-        <p>Welcome to your birthday page!</p>
       </section>
 
-      <!-- Card Page -->
-      <section id="cardPage" class="page">
-        <h2>Your Birthday Card</h2>
-        <p>We'll add the card content here later.</p>
+      <!-- CARD -->
+      <section id="card" class="page">
+        <div class="panel panel-blue single">
+          <h2>Card</h2>
+          <p class="subtle">Paste your card message below. It will show in the preview.</p>
+
+          <textarea id="cardInput" class="textarea" rows="10" placeholder="Paste your birthday card here..."></textarea>
+
+          <div class="actions">
+            <button id="saveCard" class="btn primary" type="button">Update card</button>
+            <button id="clearCard" class="btn ghost" type="button">Clear</button>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="card-preview">
+            <div class="card-top">
+              <div class="stamp"></div>
+              <div>
+                <div class="card-to" id="cardToLine">To: Liz</div>
+                <div class="card-from" id="cardFromLine">From: (your name)</div>
+              </div>
+            </div>
+
+            <div class="card-body" id="cardBody">
+              Your message will appear here.
+            </div>
+
+            <div class="card-bottom">
+              <span class="signature" id="cardSig">— (your name)</span>
+            </div>
+          </div>
+
+          <div class="name-set">
+            <label class="label" for="fromName">Your name (optional)</label>
+            <div class="name-row">
+              <input id="fromName" class="input" placeholder="Your name" />
+              <button id="setFromName" class="btn secondary" type="button">Set</button>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <!-- About Page -->
-      <section id="aboutPage" class="page">
-        <h2>About</h2>
-        <p>We'll fill this section with more details later.</p>
+      <!-- ABOUT -->
+      <section id="about" class="page">
+        <div class="panel panel-pink single">
+          <h2>About</h2>
+          <p class="subtle">Put anything here for now. You can edit later.</p>
+
+          <div class="reveal-box">
+            <div class="reveal-title">Tap a note</div>
+            <div class="reveal-buttons">
+              <button class="chip" type="button" data-reveal="You’re genuinely so appreciated.">Note 1</button>
+              <button class="chip" type="button" data-reveal="This year is going to be special.">Note 2</button>
+              <button class="chip" type="button" data-reveal="I’m really glad we’re friends.">Note 3</button>
+            </div>
+            <div class="reveal-output" id="revealOutput">Choose a note.</div>
+          </div>
+        </div>
       </section>
     </main>
-  </section>
 
+    <footer class="footer">
+      <span>Made with soft pink + soft blue.</span>
+    </footer>
+  </div>
+
+  <!-- Hearts layer -->
+  <div id="fx" aria-hidden="true"></div>
+
+  <!-- JAVASCRIPT (built-in, no extra file needed) -->
   <script>
-    // JavaScript to handle name entry and page navigation
-    document.addEventListener("DOMContentLoaded", () => {
-      const entry = document.getElementById("entry");
-      const home = document.getElementById("home");
-      const nameInput = document.getElementById("nameInput");
-      const enterBtn = document.getElementById("enterBtn");
+    // --- Enter name -> show site ---
+    const entry = document.getElementById("entry");
+    const site = document.getElementById("site");
+    const nameInput = document.getElementById("nameInput");
+    const enterBtn = document.getElementById("enterBtn");
 
-      enterBtn.addEventListener("click", () => {
-        const name = nameInput.value.trim();
-        if (name) {
-          entry.classList.add("hidden");
-          home.classList.remove("hidden");
-        }
+    const titleText = document.getElementById("titleText");
+    const homeHeading = document.getElementById("homeHeading");
+    const captionName = document.getElementById("captionName");
+    const cardToLine = document.getElementById("cardToLine");
+
+    function enterSite() {
+      const name = (nameInput.value || "").trim();
+      if (!name) { nameInput.focus(); return; }
+
+      titleText.textContent = "Happy Birthday, " + name;
+      homeHeading.textContent = "Happy 15th, " + name;
+      captionName.textContent = name;
+      cardToLine.textContent = "To: " + name;
+
+      entry.classList.add("hidden");
+      site.classList.remove("hidden");
+      showPage("home");
+    }
+
+    enterBtn.addEventListener("click", enterSite);
+    nameInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") enterSite();
+    });
+
+    // --- Tabs ---
+    const tabs = document.querySelectorAll(".tab");
+    const pages = ["home", "card", "about"];
+
+    function showPage(id) {
+      pages.forEach(p => {
+        document.getElementById(p).classList.toggle("show", p === id);
+      });
+      tabs.forEach(t => t.classList.toggle("active", t.dataset.page === id));
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => showPage(tab.dataset.page));
+    });
+
+    // --- Hearts on click (subtle) ---
+    const fx = document.getElementById("fx");
+    document.addEventListener("click", (e) => {
+      const tag = e.target.tagName.toLowerCase();
+      if (["button","input","textarea"].includes(tag)) return;
+
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = Math.random() < 0.5 ? "♡" : "♥";
+      heart.style.left = (e.clientX - 6) + "px";
+      heart.style.top = (e.clientY - 10) + "px";
+      heart.style.opacity = "0.9";
+      heart.style.transform = "translateY(0)";
+      heart.style.color = Math.random() < 0.5 ? "rgba(246,211,222,0.95)" : "rgba(214,232,255,0.95)";
+      fx.appendChild(heart);
+
+      requestAnimationFrame(() => {
+        heart.style.transform = "translateY(-80px)";
+        heart.style.opacity = "0";
       });
 
-      // Optionally handle "Enter" key as well
-      nameInput.addEventListener("keydown", (event) => {
-        if (event.key === "Enter") {
-          enterBtn.click();
-        }
-      });
+      setTimeout(() => heart.remove(), 900);
+    });
 
-      // Handle navigation between sections
-      const tabs = document.querySelectorAll(".tab");
-      const pages = document.querySelectorAll(".page");
+    // --- Card preview ---
+    const cardInput = document.getElementById("cardInput");
+    const cardBody = document.getElementById("cardBody");
+    const saveCard = document.getElementById("saveCard");
+    const clearCard = document.getElementById("clearCard");
 
-      tabs.forEach(tab => {
-        tab.addEventListener("click", () => {
-          tabs.forEach(t => t.classList.remove("active"));
-          pages.forEach(p => p.classList.add("hidden"));
+    saveCard.addEventListener("click", () => {
+      const msg = (cardInput.value || "").trim();
+      cardBody.textContent = msg || "Your message will appear here.";
+    });
 
-          tab.classList.add("active");
-          const targetPage = document.getElementById(tab.dataset.page + "Page");
-          if (targetPage) {
-            targetPage.classList.remove("hidden");
-          }
-        });
-      });
+    clearCard.addEventListener("click", () => {
+      cardInput.value = "";
+      cardBody.textContent = "Your message will appear here.";
+    });
 
-      // Optional: Add little heart animations on click
-      document.body.addEventListener("click", (event) => {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.style.left = `${event.pageX - 15}px`;
-        heart.style.top = `${event.pageY - 15}px`;
-        document.body.appendChild(heart);
+    // --- From name ---
+    const fromName = document.getElementById("fromName");
+    const setFromName = document.getElementById("setFromName");
+    const cardFromLine = document.getElementById("cardFromLine");
+    const cardSig = document.getElementById("cardSig");
 
-        setTimeout(() => {
-          heart.remove();
-        }, 1000);
+    setFromName.addEventListener("click", () => {
+      const n = (fromName.value || "").trim();
+      if (!n) return;
+      cardFromLine.textContent = "From: " + n;
+      cardSig.textContent = "— " + n;
+    });
+
+    // --- About notes ---
+    const revealOutput = document.getElementById("revealOutput");
+    document.querySelectorAll(".chip").forEach(btn => {
+      btn.addEventListener("click", () => {
+        revealOutput.textContent = btn.dataset.reveal || "";
       });
     });
   </script>
-
 </body>
 </html>
