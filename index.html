@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- ENTRY SCREEN -->
+  <section id="entry" class="entry">
+    <div class="entry-box">
+      <h1>A small birthday site</h1>
+      <p>Type your name to enter</p>
+
+      <input id="nameInput" type="text" placeholder="Liz" />
+      <button id="enterBtn">Enter</button>
+    </div>
+  </section>
+
+  <!-- MAIN SITE -->
+  <div id="site" class="hidden">
+    <header>
+      <h2 id="titleText">Happy Birthday</h2>
+
+      <nav>
+        <button class="tab active" data-page="home">Home</button>
+        <button class="tab" data-page="card">Card</button>
+        <button class="tab" data-page="about">About</button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HOME -->
+      <section id="home" class="page show">
+        <div class="panel pink">
+          <h3 id="homeText">Happy 15th</h3>
+          <p>This page was made just for today.</p>
+        </div>
+
+        <div class="panel blue">
+          <img src="liz.jpg" alt="Photo" class="photo" />
+        </div>
+      </section>
+
+      <!-- CARD -->
+      <section id="card" class="page">
+        <div class="panel blue single">
+          <h3>Birthday Card</h3>
+
+          <textarea id="cardInput" placeholder="Paste your birthday card here..."></textarea>
+          <button id="saveCard">Save Card</button>
+
+          <div id="cardPreview">Your message will appear here.</div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="page">
+        <div class="panel pink single">
+          <h3>About</h3>
+
+          <button class="note" data-text="You are genuinely so loved.">Note 1</button>
+          <button class="note" data-text="This year is going to be special.">Note 2</button>
+
+          <p id="noteOutput">Click a note.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>
