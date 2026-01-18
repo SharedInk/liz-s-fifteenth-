@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday</title>
+  <title>Happy Birthday Liz</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -15,8 +15,8 @@
     <h1>HAPPY BIRTHDAY LIZZ</h1>
     <p>enter your name lol.</p>
 
-    <input id="nameInput" type="text" placeholder="Liz" />
-    <button id="enterBtn">Enter</button>
+    <input id="nameInput" type="text" placeholder="Liz" autocomplete="off" />
+    <button id="enterBtn" type="button">Enter</button>
 
     <p class="tiny">Press Enter on your keyboard too</p>
   </div>
@@ -35,9 +35,9 @@
     </div>
 
     <nav class="nav">
-      <button class="tab active" data-page="home">Home</button>
-      <button class="tab" data-page="card">Card</button>
-      <button class="tab" data-page="about">About</button>
+      <button class="tab active" type="button" data-page="home">Home</button>
+      <button class="tab" type="button" data-page="card">Card</button>
+      <button class="tab" type="button" data-page="about">About</button>
     </nav>
   </header>
 
@@ -82,7 +82,7 @@ I’m honestly immensely grateful to have you in the friendgroup, you’re alway
 Our fairtrade cake last year and the year before were SO GOOD because of your designs and piping and decorating, you are genuinely so talented and I love your art style sososo much it’s so intricate and beautiful.
 Werewolf is 100x better with you even though I am the fortune teller but then you also happen to “be the fortune teller” as well.. hmm I wonder what’s going on here.
 Also I haven’t tested this coding yet so IDK IF IT’S GONNA BE UP TO EXPECTATIONS hopefully it will though and hopefully the code doesnt crash. You have no idea how many times I had to redo this because it DIDNT WORK EVEN THOUGH I THOUGHT I GOT EVERYTHING RIGHT SORT OF.
-Please tell me this site worked. (If it didn’t I apologize sincerely)BUT I LOVE YOU LIZ YOU’RE SO GORGEOUS AND SWEET AND I HOPE 15 TREATS YOU AMAZING!!! - from 'liz' or lisa?
+Please tell me this site worked. (If it didn’t I apologize sincerely) BUT I LOVE YOU LIZ YOU’RE SO GORGEOUS AND SWEET AND I HOPE 15 TREATS YOU AMAZING!!! - from 'liz' or lisa?
           </div>
         </div>
       </div>
@@ -128,7 +128,7 @@ Please tell me this site worked. (If it didn’t I apologize sincerely)BUT I LOV
   }
 
   enterBtn.onclick = enterSite;
-  nameInput.onkeydown = e => { if (e.key === "Enter") enterSite(); };
+  nameInput.onkeydown = (e) => { if (e.key === "Enter") enterSite(); };
 
   const tabs = document.querySelectorAll(".tab");
   const pages = document.querySelectorAll(".page");
@@ -143,6 +143,7 @@ Please tell me this site worked. (If it didn’t I apologize sincerely)BUT I LOV
     };
   });
 
+  // click effect: home has 3 symbols, card/about have hearts
   document.addEventListener("click", e => {
     if (["BUTTON","INPUT","TEXTAREA"].includes(e.target.tagName)) return;
 
@@ -157,23 +158,21 @@ Please tell me this site worked. (If it didn’t I apologize sincerely)BUT I LOV
 
     h.style.left = e.clientX + "px";
     h.style.top = e.clientY + "px";
-    h.style.fontSize = (14 + Math.random() * 10) + "px";
-    h.style.color = Math.random() < 0.5
-      ? "rgba(246,211,222,0.95)"
-      : "rgba(214,232,255,0.95)";
+    h.style.fontSize = (14 + Math.random() * 12) + "px";
+    h.style.color = "rgba(246,211,222,0.95)";
 
     const r1 = (Math.random() * 90 - 45);
-    const r2 = r1 + (Math.random() * 120 - 60);
+    const r2 = r1 + (Math.random() * 140 - 70);
 
     document.getElementById("fx").appendChild(h);
     h.style.transform = `translate(-50%, -50%) rotate(${r1}deg)`;
 
     requestAnimationFrame(() => {
       h.style.opacity = "0";
-      h.style.transform = `translate(-50%, -50%) translateY(-120px) rotate(${r2}deg)`;
+      h.style.transform = `translate(-50%, -50%) translateY(-130px) rotate(${r2}deg)`;
     });
 
-    setTimeout(() => h.remove(), 1600);
+    setTimeout(() => h.remove(), 1700);
   });
 </script>
 
