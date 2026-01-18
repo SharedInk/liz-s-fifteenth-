@@ -273,3 +273,18 @@ h2{ margin:0 0 10px; font-size:1.35rem; letter-spacing:-0.2px; }
   .grid{ grid-template-columns: 1fr; }
   .name-row{ grid-template-columns: 1fr; }
 }
+
+.home-gif{
+  width: 100%;
+  max-width: 260px;
+  margin-top: 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(20,20,20,.10);
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+
+.heart{
+  position: fixed;
+  pointer-events: none;
+  transition: transform 1600ms ease, opacity 1600ms ease;
+}
