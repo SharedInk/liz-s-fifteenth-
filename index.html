@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, Liz</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Entry Screen -->
+  <section id="entry" class="entry">
+    <div class="entry-box">
+      <h1>Happy Birthday, Liz!</h1>
+      <p>Please enter your name</p>
+      <input type="text" id="nameInput" placeholder="Liz" />
+      <button id="enterBtn">Enter</button>
+    </div>
+  </section>
+
+  <!-- Home Page -->
+  <section id="home" class="hidden page">
+    <header>
+      <nav>
+        <button class="tab" data-page="home">Home</button>
+        <button class="tab" data-page="card">Card</button>
+        <button class="tab" data-page="about">About</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="homePage" class="page show">
+        <h2>Happy 15th, Liz!</h2>
+        <div class="photo">
+          <!-- Placeholder for Liz's photo -->
+        </div>
+        <p>Welcome to your birthday page!</p>
+      </section>
+
+      <!-- Card Page -->
+      <section id="cardPage" class="page">
+        <h2>Your Birthday Card</h2>
+        <p>We'll add the card content here later.</p>
+      </section>
+
+      <!-- About Page -->
+      <section id="aboutPage" class="page">
+        <h2>About</h2>
+        <p>We'll fill this section with more details later.</p>
+      </section>
+    </main>
+  </section>
+
+  <script>
+    // JavaScript to handle name entry and page navigation
+    document.addEventListener("DOMContentLoaded", () => {
+      const entry = document.getElementById("entry");
+      const home = document.getElementById("home");
+      const nameInput = document.getElementById("nameInput");
+      const enterBtn = document.getElementById("enterBtn");
+
+      enterBtn.addEventListener("click", () => {
+        const name = nameInput.value.trim();
+        if (name) {
+          entry.classList.add("hidden");
+          home.classList.remove("hidden");
+        }
+      });
+
+      // Optionally handle "Enter" key as well
+      nameInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          enterBtn.click();
+        }
+      });
+
+      // Handle navigation between sections
+      const tabs = document.querySelectorAll(".tab");
+      const pages = document.querySelectorAll(".page");
+
+      tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          tabs.forEach(t => t.classList.remove("active"));
+          pages.forEach(p => p.classList.add("hidden"));
+
+          tab.classList.add("active");
+          const targetPage = document.getElementById(tab.dataset.page + "Page");
+          if (targetPage) {
+            targetPage.classList.remove("hidden");
+          }
+        });
+      });
+
+      // Optional: Add little heart animations on click
+      document.body.addEventListener("click", (event) => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = `${event.pageX - 15}px`;
+        heart.style.top = `${event.pageY - 15}px`;
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 1000);
+      });
+    });
+  </script>
+
+</body>
+</html>
