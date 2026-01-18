@@ -1,6 +1,5 @@
 :root{
   --pink:#f6d3de;
-  --blue:#d6e8ff;
   --ink:#141414;
   --muted:rgba(20,20,20,.70);
   --line:rgba(20,20,20,.12);
@@ -25,7 +24,7 @@ body{
   display:grid;
   place-items:center;
   padding:18px;
-  background: linear-gradient(90deg, rgba(246,211,222,.40) 0 50%, rgba(214,232,255,.40) 50% 100%);
+  background: linear-gradient(90deg, rgba(246,211,222,.40) 0 50%
 }
 .entry-box{
   width:min(520px, 100%);
