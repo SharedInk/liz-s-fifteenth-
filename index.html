@@ -8,209 +8,157 @@
 </head>
 
 <body>
-  <!-- ENTRY SCREEN -->
-  <section id="entry" class="entry">
-    <div class="entry-box">
-      <h1>Happy Birthday</h1>
-      <p>Please enter your name</p>
 
-      <input id="nameInput" type="text" placeholder="Liz" autocomplete="off" />
-      <button id="enterBtn" type="button">Enter</button>
+<!-- ENTRY PAGE -->
+<section id="entry" class="entry">
+  <div class="entry-box">
+    <h1>Happy Birthday</h1>
+    <p>Please enter your name</p>
 
-      <p class="tiny">Press Enter on your keyboard too.</p>
+    <input id="nameInput" type="text" placeholder="Liz" />
+    <button id="enterBtn">Enter</button>
+
+    <p class="tiny">Press Enter on your keyboard too</p>
+  </div>
+</section>
+
+<!-- MAIN SITE -->
+<div id="site" class="hidden">
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="mark"></div>
+      <div>
+        <div class="title" id="titleText">Happy Birthday</div>
+        <div class="subtitle">A little website just for today</div>
+      </div>
     </div>
-  </section>
 
-  <!-- MAIN SITE -->
-  <div id="site" class="site hidden">
-    <header class="topbar">
-      <div class="brand">
-        <div class="mark"></div>
-        <div>
-          <div class="title" id="titleText">Happy Birthday</div>
-          <div class="subtitle">A little website made just for today</div>
+    <nav class="nav">
+      <button class="tab active" data-page="home">Home</button>
+      <button class="tab" data-page="card">Card</button>
+      <button class="tab" data-page="about">About</button>
+    </nav>
+  </header>
+
+  <main class="wrap">
+
+    <!-- HOME -->
+    <section id="home" class="page show">
+      <div class="grid">
+        <div class="panel panel-pink">
+          <h2 id="homeHeading">Happy 15th</h2>
+          <p>Click anywhere for little hearts 💗</p>
+        </div>
+
+        <div class="panel panel-blue">
+          <div class="photo-frame">
+            <img src="liz.jpg" alt="Liz" />
+          </div>
         </div>
       </div>
+    </section>
 
-      <nav class="nav">
-        <button class="tab active" type="button" data-page="home">Home</button>
-        <button class="tab" type="button" data-page="card">Card</button>
-        <button class="tab" type="button" data-page="about">About</button>
-      </nav>
-    </header>
+    <!-- CARD -->
+    <section id="card" class="page">
+      <div class="panel panel-blue single">
+        <h2>Card</h2>
 
-    <main class="wrap">
-      <!-- HOME -->
-      <section id="home" class="page show">
-        <div class="grid">
-          <div class="panel panel-pink">
-            <h2 id="homeHeading">Happy 15th</h2>
-            <p class="lead">Click anywhere for little hearts.</p>
-          </div>
-
-          <div class="panel panel-blue">
-            <div class="photo-frame">
-              <!-- Add Liz’s photo later by uploading an image named liz.jpg -->
-              <img id="lizPhoto" src="liz.jpg" alt="Liz" />
-            </div>
-            <div class="caption">
-              <span class="caption-title" id="captionName">Liz</span>
-              <span class="caption-sub">15 today</span>
+        <div class="card-preview">
+          <div class="card-top">
+            <div class="stamp"></div>
+            <div>
+              <div class="card-to">To: Liz</div>
+              <div class="card-from">From: Alice</div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- CARD -->
-      <section id="card" class="page">
-        <div class="panel panel-blue single">
-          <h2>Card</h2>
-          <p class="subtle">For Liz 💗</p>
+          <div class="card-body">
+hello world. Happy birthday to the sweetest and funniest and prettiest girl ever! LIZ you are actuals so young I can’t believe you’re only 15 which means you cant get your learners license this year.. but it’s okay because neither can I!! We can be driver-license-less together when everyone is doing their driving tests.
 
-          <div class="divider"></div>
+I’m honestly immensely grateful to have you in the friendgroup, you’re always so bright and happy and in a good mood which brightens up everyone’s day. Also you are literally so stunning like my very 1st impression of you back at the very start of year 9 was like omg she is so freaking pretty and I love your braids hairstyle uehaohue.
 
-          <div class="card-preview">
-            <div class="card-top">
-              <div class="stamp"></div>
-              <div>
-                <div class="card-to" id="cardToLine">To: Liz</div>
-                <div class="card-from">From: Alice</div>
-              </div>
-            </div>
+Our fairtrade cake last year and the year before were SO GOOD because of your designs and piping and decorating, you are genuinely so talented and I love your art style sososo much it’s so intricate and beautiful.
 
-            <div class="card-body" id="cardBody">
-hello world. Happy birthday to the sweetest and funniest and prettiest girl ever! LIZ you are actuals so young I can’t believe you’re only 15 which means you cant get your learners license this year.. but it’s okay because neither can I!! We can be driver-license-less together when everyone is doing their driving tests. I’m honestly immensely grateful to have you in the friendgroup, you’re always so bright and happy and in a good mood which brightens up everyone’s day. Also you are literally so stunning like my very 1st impression of you back at the very start of year 9 was like omg she is so freaking pretty and I love your braids hairstyle uehaohue. Our fairtrade cake last year and the year before were SO GOOD because of your designs and piping and decorating, you are genuinely so talented and I love your art style sososo much it’s so intricate and beautiful. Werewolf is 100x better with you even though I am the fortune teller but then you also happen to “be the fortune teller” as well.. hmm I wonder what’s going on here. Also I haven’t tested this coding yet so IDK IF IT’S GONNA BE UP TO EXPECTATIONS hopefully it will though and hopefully the code doesnt crash. You have no idea how many times I had to redo this because it DIDNT WORK EVEN THOUGH I THOUGHT I GOT EVERYTHING RIGHT SORT OF but apparently it has these different branches and paths expect im not advanced in this stuff at all. Please tell me this site worked. (If it didn’t I apologize sincerely) but I LOVE YOU LIZ YOUR SO GORGEOUS AND SWEET I HOPE 15 TREATS YOU AMAZING!!! - from ‘liz’ or Alice :)
-            </div>
+Werewolf is 100x better with you even though I am the fortune teller but then you also happen to “be the fortune teller” as well.. hmm I wonder what’s going on here.
 
-            <div class="card-bottom">
-              <span class="signature">— Alice</span>
-            </div>
+Also I haven’t tested this coding yet so IDK IF IT’S GONNA BE UP TO EXPECTATIONS hopefully it will though and hopefully the code doesnt crash. You have no idea how many times I had to redo this because it DIDNT WORK EVEN THOUGH I THOUGHT I GOT EVERYTHING RIGHT SORT OF.
+
+Please tell me this site worked. (If it didn’t I apologize sincerely)
+
+BUT I LOVE YOU LIZ YOU’RE SO GORGEOUS AND SWEET AND I HOPE 15 TREATS YOU AMAZING!!!
+
+— Alice :)
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ABOUT -->
-      <section id="about" class="page">
-        <div class="panel panel-pink single">
-          <h2>About</h2>
-          <p class="subtle">
-            Edit this section later with anything you want: inside jokes, “reasons I love you,” memories, a mini timeline, etc.
-          </p>
+    <!-- ABOUT -->
+    <section id="about" class="page">
+      <div class="panel panel-pink single">
+        <h2>About</h2>
+        <p>
+          You can edit this section later with memories, inside jokes,
+          reasons you love her, or anything you want.
+        </p>
 
-          <div class="divider"></div>
+        <ul>
+          <li>Favorite memory together</li>
+          <li>Something you admire about her</li>
+          <li>A wish for this year</li>
+        </ul>
+      </div>
+    </section>
 
-          <div class="card-preview">
-            <div class="card-top">
-              <div class="stamp"></div>
-              <div>
-                <div class="card-to">Ideas you can customize</div>
-                <div class="card-from">Replace these lines</div>
-              </div>
-            </div>
+  </main>
 
-            <div class="card-body">
-• Favorite memories together:
-  1) __________________________
-  2) __________________________
-  3) __________________________
+  <footer class="footer">
+    <span>this took me 5 hours to make</span>
+  </footer>
+</div>
 
-• Three things I appreciate about you:
-  1) __________________________
-  2) __________________________
-  3) __________________________
+<!-- HEART EFFECT -->
+<div id="fx"></div>
 
-• A tiny “2026 wishlist” for you:
-  – __________________________
-  – __________________________
-  – __________________________
-            </div>
+<script>
+  const entry = document.getElementById("entry");
+  const site = document.getElementById("site");
+  const nameInput = document.getElementById("nameInput");
+  const enterBtn = document.getElementById("enterBtn");
 
-            <div class="card-bottom">
-              <span class="signature">— (your name)</span>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+  function enterSite() {
+    if (!nameInput.value.trim()) return;
+    entry.classList.add("hidden");
+    site.classList.remove("hidden");
+  }
 
-    <footer class="footer">
-      <span>this took me 5 hours to make</span>
-    </footer>
-  </div>
+  enterBtn.onclick = enterSite;
+  nameInput.onkeydown = e => { if (e.key === "Enter") enterSite(); };
 
-  <!-- Hearts layer -->
-  <div id="fx" aria-hidden="true"></div>
+  const tabs = document.querySelectorAll(".tab");
+  const pages = document.querySelectorAll(".page");
 
-  <!-- JAVASCRIPT (built-in, no extra file needed) -->
-  <script>
-    // --- Enter name -> show site ---
-    const entry = document.getElementById("entry");
-    const site = document.getElementById("site");
-    const nameInput = document.getElementById("nameInput");
-    const enterBtn = document.getElementById("enterBtn");
+  tabs.forEach(tab => {
+    tab.onclick = () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      pages.forEach(p => p.classList.remove("show"));
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.page).classList.add("show");
+    };
+  });
 
-    const titleText = document.getElementById("titleText");
-    const homeHeading = document.getElementById("homeHeading");
-    const captionName = document.getElementById("captionName");
-    const cardToLine = document.getElementById("cardToLine");
+  document.addEventListener("click", e => {
+    if (["BUTTON","INPUT"].includes(e.target.tagName)) return;
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.textContent = Math.random() < 0.5 ? "♡" : "♥";
+    h.style.left = e.clientX + "px";
+    h.style.top = e.clientY + "px";
+    document.getElementById("fx").appendChild(h);
+    setTimeout(() => h.remove(), 800);
+  });
+</script>
 
-    function enterSite() {
-      const name = (nameInput.value || "").trim();
-      if (!name) { nameInput.focus(); return; }
-
-      titleText.textContent = "Happy Birthday, " + name;
-      homeHeading.textContent = "Happy 15th, " + name;
-      captionName.textContent = name;
-      cardToLine.textContent = "To: " + name;
-
-      entry.classList.add("hidden");
-      site.classList.remove("hidden");
-      showPage("home");
-    }
-
-    enterBtn.addEventListener("click", enterSite);
-    nameInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") enterSite();
-    });
-
-    // --- Tabs ---
-    const tabs = document.querySelectorAll(".tab");
-    const pages = ["home", "card", "about"];
-
-    function showPage(id) {
-      pages.forEach(p => {
-        document.getElementById(p).classList.toggle("show", p === id);
-      });
-      tabs.forEach(t => t.classList.toggle("active", t.dataset.page === id));
-    }
-
-    tabs.forEach(tab => {
-      tab.addEventListener("click", () => showPage(tab.dataset.page));
-    });
-
-    // --- Hearts on click (subtle) ---
-    const fx = document.getElementById("fx");
-    document.addEventListener("click", (e) => {
-      const tag = e.target.tagName.toLowerCase();
-      if (["button","input","textarea"].includes(tag)) return;
-
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.textContent = Math.random() < 0.5 ? "♡" : "♥";
-      heart.style.left = (e.clientX - 6) + "px";
-      heart.style.top = (e.clientY - 10) + "px";
-      heart.style.opacity = "0.9";
-      heart.style.transform = "translateY(0)";
-      heart.style.color = Math.random() < 0.5 ? "rgba(246,211,222,0.95)" : "rgba(214,232,255,0.95)";
-      fx.appendChild(heart);
-
-      requestAnimationFrame(() => {
-        heart.style.transform = "translateY(-80px)";
-        heart.style.opacity = "0";
-      });
-
-      setTimeout(() => heart.remove(), 900);
-    });
-  </script>
 </body>
 </html>
