@@ -1,11 +1,11 @@
 :root{
   --pink:#f6d3de;
+  --pink-soft:#fde7ee;
+  --pink-light:#fff2f6;
+
   --ink:#141414;
   --muted:rgba(20,20,20,.70);
   --line:rgba(20,20,20,.12);
-  --shadow: 0 18px 50px rgba(0,0,0,.10);
-  --radius: 22px;
-  --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 }
 
 *{ box-sizing:border-box; }
@@ -76,10 +76,9 @@ body{
 }
 .brand{ display:flex; gap:12px; align-items:center; }
 .mark{
-  width:14px; height:14px;
-  border-radius:6px;
-  border:1px solid var(--line);
-  background: linear-gradient(90deg, var(--pink) 0 50%, var(--blue) 50% 100%);
+  background: linear-gradient(180deg, var(--pink), var(--pink-soft));
+}
+
 }
 .title{ font-weight:800; }
 .subtitle{ font-size:.95rem; color:var(--muted); }
@@ -123,7 +122,6 @@ body{
   background: rgba(255,255,255,.72);
 }
 .panel-pink{ background: color-mix(in srgb, var(--pink) 75%, white 25%); }
-.panel-blue{ background: color-mix(in srgb, var(--blue) 75%, white 25%); }
 
 h2{ margin:0 0 10px; font-size:1.35rem; letter-spacing:-0.2px; }
 .lead{ margin:0; color:rgba(20,20,20,.78); }
